@@ -1,0 +1,240 @@
+:root {
+    --header-background-color: #faed0b;
+    --student-card-yellow: #FAED0B;
+    --grey-color: #404040;
+    --white-color: #fff;
+    --red-color: #c13335;
+    --student-card-blue: rgba(30, 165, 252, 0.75);
+    --accordion-gradient-color: linear-gradient(92.54deg, #FAED0B 0%, #81E320 100%);
+    --accordion-gradient-open-color: linear-gradient(138.44deg, #FAED0B 24.24%, #81E320 77.25%);
+    --box-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    --text-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --montserrat-font: 'Montserrat';
+    --pixel-font: 'Neue Pixel Sans';
+}
+
+@font-face {
+    font-family: 'Neue Pixel Sans';
+    src: url(../fonts/NeuePixelSans.woff);
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    min-height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--header-background-color);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .logo {
+    font-size: 45px;
+    font-family: var(--montserrat-font);
+    font-weight: 800;
+    color: var(--white-color);
+    user-select: none;
+    text-decoration: none;
+    text-shadow: var(--text-shadow-light);
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(../img/lemon-bg.svg);
+    background-attachment: fixed;
+    background-size: 5%;
+}
+
+main .container {
+    padding-top: 40px;
+}
+
+.group-data {
+    margin: 0 0 40px 0;
+    width: 400px;
+    height: 50px;
+    font-size: 24px;
+    padding-left: 13px;
+    padding-top: 4px;
+    border-radius: 5px;
+    font-family: var(--pixel-font);
+    background: var(--white-color);
+    box-shadow: var(--box-shadow-light);
+    border: 3px solid var(--grey-color);
+}
+
+.student-card {
+    width: 100%;
+    min-height: 358px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    padding: 30px 11.5px 15px;
+    box-shadow: var(--box-shadow-light);
+    background: var(--student-card-blue);
+}
+
+.student-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    height: 278px;
+    box-shadow: var(--box-shadow-light);
+    background: var(--student-card-yellow);
+}
+
+.student-card .content {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 45px;
+}
+
+.person .person-avatar {
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    font-family: var(--montserrat-font);
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 11px;
+}
+
+.person .person-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    box-shadow: var(--text-shadow-light);
+}
+
+.person .person-name {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--montserrat-font);
+    font-size: 21px;
+    color: var(--white-color);
+    text-shadow: var(--text-shadow-light);
+    font-weight: 700;
+}
+
+.student-card .content .person-hw {
+    min-height: 93px;
+    padding: 10px 15px 15px 10px;
+    width: 100%;
+    background: var(--white-color);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-light);
+}
+
+.person-hw .title {
+    font-family: var(--montserrat-font);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.accordion-item {
+    border: 0;
+    background: var(--accordion-gradient-open-color);
+}
+
+.accordion-header .accordion-button:not(.collapsed),
+.accordion-collapse.show .accordion-body {
+    background: transparent;
+}
+
+.accordion-header .accordion-button, 
+.accordion-body,
+.accordion-item {
+    box-shadow: none;
+    --bs-accordion-border-radius: 3px;
+    --bs-accordion-inner-border-radius: 3px;
+}
+
+.accordion-body {
+    padding-top: 0;
+    padding-bottom: 1px;
+}
+
+.accordion-header .accordion-button,
+.accordion-body ul li a {
+    font-family: var(--pixel-font);
+    color: var(--white-color);
+    text-shadow: var(--text-shadow-light);
+    transition: .3s;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.accordion-body ul li a:hover {
+    color: var(--grey-color);
+}
+
+.accordion-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.accordion-header .accordion-button {
+    position: relative;
+    text-transform: uppercase;
+    padding-left: 10px;
+    background: var(--accordion-gradient-color);
+    height: 36px;
+}
+
+.accordion-button .spinner-border {
+    --bs-spinner-width: 20px;
+    --bs-spinner-height: 20px;
+    --bs-spinner-border-width: 3px;
+    position: absolute;
+    top: calc(50% - var(--bs-spinner-height) / 2);
+    right: 10px;
+}
+
+.accordion-button .arrow {
+    transition: .3s;
+    position: absolute;
+    top: calc(50% - 13px);
+    rotate: -90deg;
+    right: 10px;
+}
+
+.accordion-button .error {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: var(--red-color);
+}
+
+.accordion-button:not(.collapsed) .arrow {
+    rotate: 0deg;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
