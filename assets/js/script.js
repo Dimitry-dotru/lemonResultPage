@@ -41,7 +41,7 @@ $("[data-user-hw]").each(function() {
         },
         error: function(){
             accordionBtn.find('.spinner-border').remove();
-            accordionBtn.append(`<div class="error">&#10006;</div>`);
+            accordionBtn.append(`<div class="error"><img src="./assets/img/pixel-cross.svg" alt="error"></div>`);
             accordionBody.remove();
         }
     });
