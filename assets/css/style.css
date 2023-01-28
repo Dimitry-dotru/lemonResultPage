@@ -44,6 +44,7 @@ body {
     background-color: var(--white-color-changible);
     background-attachment: fixed;
     background-size: 5%;
+    transition: .3s;
 }
 
 main .container {
