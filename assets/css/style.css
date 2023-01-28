@@ -75,7 +75,7 @@ main .container {
 .student-card {
     width: 100%;
     min-height: 358px;
-    max-width: 300px;
+    /* max-width: 300px; */
     display: flex;
     justify-content: center;
     position: relative;
