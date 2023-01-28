@@ -1,5 +1,4 @@
 $('.person-hw .accordion').each(function(el) {
-    //! сделать селектор Jquery!!!!
     const accordionBody = this.querySelector('.accordion-collapse');
     accordionBody.id += el;
 
@@ -10,7 +9,8 @@ $('.person-hw .accordion').each(function(el) {
 
 $("[data-user-hw]").each(function() {
     const element = $(this);
-    const accordionBtn = element.parent().parent().find('.accordion-button');
+    const accordionBtn = element.find('.accordion-button');
+    const accordionBody = element.find('.accordion-body');
 
     $.ajax({
         beforeSend: function() {
@@ -20,14 +20,29 @@ $("[data-user-hw]").each(function() {
         dataType: "html",
         cache: false,
         success: function(data){
+            const temp = document.createElement('div');
+            temp.insertAdjacentHTML('beforeend', data);
+            
+            const hws = temp.querySelector('ul');
+            const avatar = temp.querySelector('img');
+            const name = temp.querySelector('h3').textContent;
+
+            avatar.classList.add('img-fluid');
+            avatar.alt = 'Your logo';
+
+            element.find('.content .person .person-avatar').append(avatar);
+            element.find('.content .person .person-name').append(name);
+
             accordionBtn.find('.spinner-border').remove();
             accordionBtn.append(`<img class="arrow" src="assets/img/pixel-arrow.svg">`);
-            element.html(data);
+            accordionBody.html(hws);
+
+            
         },
         error: function(){
             accordionBtn.find('.spinner-border').remove();
             accordionBtn.append(`<div class="error">&#10006;</div>`);
-            element.parent().remove();
+            accordionBody.remove();
         }
     });
 });
