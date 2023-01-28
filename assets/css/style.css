@@ -268,13 +268,13 @@ main .container {
     height: 34px;
 }
 
-input[type=checkbox]#switch {
+.switch input[type=checkbox]#switch {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-label {
+.switch label {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -287,7 +287,7 @@ label {
     border-radius: 34px;
 }
 
-label:before {
+.switch label:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -300,11 +300,11 @@ label:before {
     border-radius: 50%;
 }
 
-input[type=checkbox]:checked+label {
+.switch input[type=checkbox]:checked+label {
     background-color: #2196F3;
 }
 
-input[type=checkbox]:checked+label:before {
+.switch input[type=checkbox]:checked+label:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
