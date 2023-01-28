@@ -31,3 +31,21 @@ $("[data-user-hw]").each(function() {
         }
     });
 });
+
+// Get the scroll-up-button
+var scrollUpButton = document.getElementById("scroll-up-button");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollUpButton.style.display = "block";
+  } else {
+    scrollUpButton.style.display = "none";
+  }
+};
+
+// When the user clicks on the button, scroll to the top of the document
+scrollUpButton.onclick = function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};

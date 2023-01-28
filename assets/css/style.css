@@ -238,3 +238,26 @@ main .container {
     display: none;
 }
 
+/* Button Scrool Up */
+
+#scroll-up-button {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    padding: 0 8px;
+    background-color: var(--grey-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--text-shadow-light);
+}
+ 
+#scroll-up-button .pixel-arrow{
+    transform: rotate(180deg);
+    width: 34px;
+}
+
+/* #scroll-up-button:hover {
+  background-color: #555;
+} */
