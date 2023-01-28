@@ -247,12 +247,16 @@ main .container {
     cursor: pointer;
     box-shadow: var(--text-shadow-light);
     display: none;
-    z-index: 5;
+    z-index: 9;
 }
 
 #scroll-up-button .pixel-arrow {
     transform: rotate(180deg);
     width: 34px;
+}
+
+.pixel-arrow img {
+    filter: var(--pixel-arrow-brightness);
 }
 
 /* Switcher */
