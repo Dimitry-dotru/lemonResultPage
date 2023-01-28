@@ -66,9 +66,9 @@ scrollUpButton.onclick = function() {
 };
 
 // Switcher
-var switch = document.querySelector("#switch");
-switch.addEventListener("change", function() {
-  if (switch.checked) {
+var switcher = document.querySelector('#switch');
+switcher.addEventListener("change", function() {
+  if (switcher.checked) {
     console.log("Switch is on");
   } else {
     console.log("Switch is off");
