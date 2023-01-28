@@ -1,15 +1,4 @@
 :root {
-    --header-background-color: #faed0b;
-    --student-card-yellow: #FAED0B;
-    --grey-color: #404040;
-    --white-color: #fff;
-    --red-color: #c13335;
-    --blue-color: #1EA5FC;
-    --student-card-blue: rgba(30, 165, 252, 0.75);
-    --accordion-gradient-color: linear-gradient(92.54deg, #FAED0B 0%, #81E320 100%);
-    --accordion-gradient-open-color: linear-gradient(138.44deg, #FAED0B 24.24%, #81E320 77.25%);
-    --box-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    --text-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.25);
     --montserrat-font: 'Montserrat';
     --pixel-font: 'Neue Pixel Sans';
 }
@@ -29,20 +18,21 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    background: var(--header-background-color);
+    background: var(--yellow-color);
 }
 
 header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 }
 
 header .container .logo {
     font-size: 45px;
     font-family: var(--montserrat-font);
     font-weight: 800;
-    color: var(--white-color);
+    color: var(--white-color-changible);
     user-select: none;
     text-decoration: none;
     text-shadow: var(--text-shadow-light);
@@ -51,6 +41,7 @@ header .container .logo {
 body {
     min-height: 100vh;
     background-image: url(../img/lemon-bg.svg);
+    background-color: var(--white-color-changible);
     background-attachment: fixed;
     background-size: 5%;
 }
@@ -68,10 +59,11 @@ main .container {
     padding-left: 13px;
     padding-top: 4px;
     border-radius: 5px;
+    color: var(--grey-color-changible);
     font-family: var(--pixel-font);
-    background: var(--white-color);
+    background: var(--white-color-changible);
     box-shadow: var(--box-shadow-light);
-    border: 3px solid var(--grey-color);
+    border: 3px solid var(--grey-color-changible);
 }
 
 .student-card {
@@ -83,7 +75,7 @@ main .container {
     border-radius: 10px;
     padding: 30px 11.5px 15px;
     box-shadow: var(--box-shadow-light);
-    background: var(--student-card-blue);
+    background: var(--blue-color);
 }
 
 .student-card::before {
@@ -95,7 +87,7 @@ main .container {
     border-radius: 10px;
     height: 278px;
     box-shadow: var(--box-shadow-light);
-    background: var(--student-card-yellow);
+    background: var(--yellow-color);
 }
 
 .student-card .content {
@@ -136,7 +128,7 @@ main .container {
     text-transform: uppercase;
     font-family: var(--montserrat-font);
     font-size: 21px;
-    color: var(--white-color);
+    color: var(--grey-color-changible);
     text-shadow: var(--text-shadow-light);
     font-weight: 700;
 }
@@ -145,13 +137,14 @@ main .container {
     min-height: 93px;
     padding: 10px 15px 15px 10px;
     width: 100%;
-    background: var(--white-color);
+    background: var(--white-color-changible);
     border-radius: 5px;
     box-shadow: var(--box-shadow-light);
 }
 
 .person-hw .title {
     font-family: var(--montserrat-font);
+    color: var(--grey-color-changible);
     font-weight: 700;
     font-size: 18px;
 }
@@ -228,7 +221,7 @@ main .container {
     right: 10px;
     top: 50%;
     transform: translate(0, -50%);
-    color: var(--red-color);
+    color: var(--error-color);
 }
 
 .accordion-button:not(.collapsed) .arrow {
@@ -248,7 +241,7 @@ main .container {
     bottom: 20px;
     right: 20px;
     padding: 0 8px;
-    background-color: var(--grey-color);
+    background-color: var(--grey-color-changible);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: var(--text-shadow-light);

@@ -1,0 +1,13 @@
+:root {
+    --yellow-color: #FAED0B;
+    --blue-color: rgba(30, 165, 252, 0.75);
+    --white-color: #fff;
+    --white-color-changible: #fff;
+    --grey-color: #404040;
+    --grey-color-changible: #404040;
+    --error-color: #c13335;
+    --accordion-gradient-color: linear-gradient(92.54deg, #FAED0B 0%, #81E320 100%);
+    --accordion-gradient-open-color: linear-gradient(138.44deg, #FAED0B 24.24%, #81E320 77.25%);
+    --box-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    --text-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

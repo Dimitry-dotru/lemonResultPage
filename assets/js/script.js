@@ -68,9 +68,10 @@ scrollUpButton.onclick = function() {
 // Switcher
 const switcher = document.querySelector('#switch');
 switcher.addEventListener("change", function() {
+  const link = document.querySelector('#theme');
   if (switcher.checked) {
-    console.log("Switch is on");
+    link.href = 'assets/css/variables-light.css';
   } else {
-    console.log("Switch is off");
+    link.href = 'assets/css/variables-dark.css';
   }
 });
