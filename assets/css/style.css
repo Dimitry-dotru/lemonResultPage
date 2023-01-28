@@ -344,4 +344,7 @@ input[type=checkbox]:checked+label:before {
     header .container .logo {
         font-size: 20px;
     }
+    body {
+        background-size: 13%;
+    }
 }
