@@ -48,7 +48,7 @@ $("[data-user-hw]").each(function() {
 });
 
 // Get the scroll-up-button
-var scrollUpButton = document.getElementById("scroll-up-button");
+const scrollUpButton = document.getElementById("scroll-up-button");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {
@@ -66,7 +66,7 @@ scrollUpButton.onclick = function() {
 };
 
 // Switcher
-var switcher = document.querySelector('#switch');
+const switcher = document.querySelector('#switch');
 switcher.addEventListener("change", function() {
   if (switcher.checked) {
     console.log("Switch is on");
