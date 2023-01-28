@@ -251,6 +251,8 @@ main .container {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: var(--text-shadow-light);
+    display: none;
+    transition: .3s;
 }
  
 #scroll-up-button .pixel-arrow{
