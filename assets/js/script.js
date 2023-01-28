@@ -64,3 +64,13 @@ scrollUpButton.onclick = function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
+
+// Switcher
+var switch = document.querySelector("#switch");
+switch.addEventListener("change", function() {
+  if (switch.checked) {
+    console.log("Switch is on");
+  } else {
+    console.log("Switch is off");
+  }
+});
