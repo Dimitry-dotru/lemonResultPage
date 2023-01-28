@@ -252,6 +252,7 @@ main .container {
     cursor: pointer;
     box-shadow: var(--text-shadow-light);
     display: none;
+    z-index: 5;
 }
  
 #scroll-up-button .pixel-arrow{
