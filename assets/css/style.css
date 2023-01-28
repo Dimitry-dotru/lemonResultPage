@@ -260,6 +260,8 @@ main .container {
     width: 34px;
 }
 
-/* #scroll-up-button:hover {
-  background-color: #555;
-} */
+@media screen and (max-width: 576px) {
+    header .container .logo {
+        font-size: 20px;
+    }
+}
