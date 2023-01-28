@@ -4,6 +4,7 @@
     --grey-color: #404040;
     --white-color: #fff;
     --red-color: #c13335;
+    --blue-color: #1EA5FC;
     --student-card-blue: rgba(30, 165, 252, 0.75);
     --accordion-gradient-color: linear-gradient(92.54deg, #FAED0B 0%, #81E320 100%);
     --accordion-gradient-open-color: linear-gradient(138.44deg, #FAED0B 24.24%, #81E320 77.25%);
@@ -261,6 +262,7 @@ main .container {
 }
 
 /* Switcher */
+
 .switch {
     position: relative;
     display: inline-block;
@@ -268,43 +270,71 @@ main .container {
     height: 34px;
 }
 
-.switch input[type=checkbox]#switch {
+input[type=checkbox]#switch {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.switch label {
+label {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--grey-color);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
 }
 
-.switch label:before {
+.icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    transition: .4s;
+}
+
+.moon {
+    left: 73.5%;
+}
+
+.sun {
+    display: none;
+    left: 30%;
+}
+
+input[type=checkbox]:checked+label .sun {
+    display: block;
+}
+
+input[type=checkbox]:checked+label .moon {
+    display: none;
+}
+
+label:before {
     position: absolute;
     content: "";
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: var(--white-color);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
 }
 
-.switch input[type=checkbox]:checked+label {
-    background-color: #2196F3;
+input[type=checkbox]:checked+label {
+    background-color: var(--blue-color);
 }
 
-.switch input[type=checkbox]:checked+label:before {
+input[type=checkbox]:checked+label:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
