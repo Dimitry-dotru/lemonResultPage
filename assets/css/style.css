@@ -105,6 +105,7 @@ main .container {
     align-items: center;
     flex-direction: column;
     margin-bottom: 45px;
+    min-height: 174px;
 }
 
 .person .person-avatar {
@@ -233,8 +234,6 @@ main .container {
     display: none;
 }
 
-/* Button Scrool Up */
-
 #scroll-up-button {
     position: fixed;
     width: 50px;
@@ -259,8 +258,6 @@ main .container {
     filter: var(--pixel-arrow-brightness);
 }
 
-/* Switcher */
-
 .switch {
     position: relative;
     display: inline-block;
@@ -282,8 +279,7 @@ label {
     right: 0;
     bottom: 0;
     background-color: var(--grey-color);
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: .3s;
     border-radius: 34px;
 }
 
@@ -291,8 +287,6 @@ label {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 20px;
     transition: .4s;
@@ -323,8 +317,7 @@ label:before {
     left: 4px;
     bottom: 4px;
     background-color: var(--white-color);
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: .3s;
     border-radius: 50%;
 }
 
@@ -333,8 +326,6 @@ input[type=checkbox]:checked+label {
 }
 
 input[type=checkbox]:checked+label:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
 
