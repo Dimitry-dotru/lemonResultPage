@@ -1,7 +1,15 @@
-$.getJSON("https://api.ipify.org?format=json", function (data) {
-  console.log(data);
-})
+// document.cookie = 'another_option=true';
+// console.log(document.cookie)
 
+
+// !получение ip адреса
+fetch('https://ipapi.co/json/')
+  .then(d => d.json())
+  .then(d => {
+    if (d.ip === '217.196.161.150') {
+      // console.log('youre an admin!');
+    }
+  });
 
 $('.student-card').wrap(`<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center mb-5"></div>`);
 $('.student-card').append(`<div class="content">
@@ -37,11 +45,9 @@ $('.person-hw .accordion').each(function (el) {
 
   const button = this.querySelector('.accordion-button');
   button.dataset.bsTarget += el;
-
 })
 
 // ajax
-
 $("[data-user-hw]").each(function () {
   const element = $(this);
   const accordionBtn = element.find('.accordion-button');

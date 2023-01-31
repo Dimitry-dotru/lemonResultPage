@@ -171,7 +171,17 @@ main .container {
 
 .accordion-body {
     padding-top: 0;
+    position: relative;
     padding-bottom: 1px;
+}
+
+.accordion-body ul li .mark {
+    position: absolute;
+    right: 20px;
+    font-family: var(--pixel-font);
+    color: var(--white-color);
+    font-size: 20px;
+    background-color: transparent;
 }
 
 .accordion-header .accordion-button,
