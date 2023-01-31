@@ -181,6 +181,7 @@ main .container {
     font-family: var(--pixel-font);
     color: var(--white-color);
     font-size: 20px;
+    text-shadow: var(--text-shadow-light);
     background-color: transparent;
 }
 
