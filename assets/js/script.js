@@ -1,21 +1,20 @@
-function adminsAction() {
-  // const locStor = window.localStorage;
-  // const studentsAmnt = $('.student-card').length;
+const locale = window.localStorage;
+const usersInfo = [];
 
-  // if (locStor.getItem('studentsAmnt') !== studentsAmnt) {
-  //   locStor.getItem('studentsAmnt') < studentsAmnt ? console.log('New students added!') : console.log('Some students gone :(');
-  // }
-  // locStor.setItem('studentsAmnt', studentsAmnt);
+function adminsAction(studentCard) {
+  const student = studentCard[0];
+  const studentInfo = {};
+
+  studentInfo.name = student.attributes['data-user-name'].value;
+  studentInfo.hw = student.querySelectorAll('ul li').length;
+
+
+  usersInfo.push(studentInfo);
+
 }
 
 // !получение ip адреса
-fetch('https://ipapi.co/json/')
-  .then(d => d.json())
-  .then(d => {
-    if (d.ip === '217.196.161.150') {
-      adminsAction();
-    }
-  });
+
 
 $('.student-card').wrap(`<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center mb-5"></div>`);
 $('.student-card').append(`<div class="content">
@@ -67,13 +66,14 @@ $("[data-user-hw]").each(function () {
     dataType: "html",
     cache: false,
     success: function (data) {
+
       const temp = document.createElement('div');
       temp.insertAdjacentHTML('beforeend', data);
 
       const hws = temp.querySelector('ul');
       if (hws.querySelectorAll('li').length > 5) {
         hws.style.overflow = 'scroll';
-        hws.style.maxHeight = '255px';
+        hws.style.maxHeight = '155px';
       }
       const avatar = temp.querySelector('img');
       const name = temp.querySelector('h3').textContent;
@@ -88,7 +88,13 @@ $("[data-user-hw]").each(function () {
       accordionBtn.append(`<img class="arrow" src="assets/img/pixel-arrow.svg">`);
       accordionBody.html(hws);
 
-
+      // fetch('https://ipapi.co/json/')
+      //   .then(d => d.json())
+      //   .then(d => {
+      //     if (d.ip === '217.196.161.150') {
+      //       adminsAction(element);
+      //     }
+      //   });
     },
     error: function () {
       accordionBtn.find('.spinner-border').remove();
@@ -97,6 +103,7 @@ $("[data-user-hw]").each(function () {
     }
   });
 });
+
 
 // scroll to top
 const scrollUpButton = document.getElementById("scroll-up-button");
@@ -116,11 +123,21 @@ scrollUpButton.onclick = function () {
 
 // Switcher
 const switcher = document.querySelector('#switch');
+const link = document.querySelector('#theme');
+
+if (locale.getItem('theme') === 'light') {
+  link.href = 'assets/css/variables-light.css';
+} else if (locale.getItem('theme') === 'dark'){
+  link.href = 'assets/css/variables-dark.css';
+  switcher.checked = false;
+}
+
 switcher.addEventListener("change", function () {
-  const link = document.querySelector('#theme');
   if (switcher.checked) {
     link.href = 'assets/css/variables-light.css';
+    locale.setItem('theme', 'light');
   } else {
     link.href = 'assets/css/variables-dark.css';
+    locale.setItem('theme', 'dark');
   }
 });
