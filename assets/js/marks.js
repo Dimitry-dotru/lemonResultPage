@@ -21,6 +21,7 @@ function marksUsage(data) {
     const personMarks = usersArray.find((el) => el.name === userName).marks;
 
     const li = this.querySelectorAll('ul li');
+    const ul = this.querySelector('ul');
     for (let i = 0; i < personMarks.length && i < li.length; i++) {
       li[i].insertAdjacentHTML('beforeend', `<span class="mark">${personMarks[i]}</span>`);
       

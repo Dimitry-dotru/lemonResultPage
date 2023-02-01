@@ -1,13 +1,19 @@
-// document.cookie = 'another_option=true';
-// console.log(document.cookie)
+function adminsAction() {
+  // const locStor = window.localStorage;
+  // const studentsAmnt = $('.student-card').length;
 
+  // if (locStor.getItem('studentsAmnt') !== studentsAmnt) {
+  //   locStor.getItem('studentsAmnt') < studentsAmnt ? console.log('New students added!') : console.log('Some students gone :(');
+  // }
+  // locStor.setItem('studentsAmnt', studentsAmnt);
+}
 
 // !получение ip адреса
 fetch('https://ipapi.co/json/')
   .then(d => d.json())
   .then(d => {
     if (d.ip === '217.196.161.150') {
-      // console.log('youre an admin!');
+      adminsAction();
     }
   });
 
@@ -65,6 +71,10 @@ $("[data-user-hw]").each(function () {
       temp.insertAdjacentHTML('beforeend', data);
 
       const hws = temp.querySelector('ul');
+      if (hws.querySelectorAll('li').length > 5) {
+        hws.style.overflow = 'scroll';
+        hws.style.maxHeight = '255px';
+      }
       const avatar = temp.querySelector('img');
       const name = temp.querySelector('h3').textContent;
 
