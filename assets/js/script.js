@@ -73,7 +73,7 @@ $("[data-user-hw]").each(function () {
       const hws = temp.querySelector('ul');
       if (hws.querySelectorAll('li').length > 5) {
         hws.style.overflow = 'scroll';
-        hws.style.maxHeight = '155px';
+        hws.style.maxHeight = '167px';
       }
       const avatar = temp.querySelector('img');
       const name = temp.querySelector('h3').textContent;
