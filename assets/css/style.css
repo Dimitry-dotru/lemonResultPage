@@ -179,11 +179,6 @@ main .container {
     width: 0;
 }
 
-/* .accordion-body ul {
-    max-height: 225px;
-    overflow-y: scroll;
-} */
-
 .accordion-body ul li {
     position: relative;
 }

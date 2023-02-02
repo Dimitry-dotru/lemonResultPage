@@ -1,16 +1,16 @@
 const locale = window.localStorage;
-const usersInfo = [];
 
 function adminsAction(studentCard) {
   const student = studentCard[0];
-  const studentInfo = {};
+  
+  const studName = student.querySelector('.person-name').textContent;
+  const amntHWs = student.querySelectorAll('ul li').length;
 
-  studentInfo.name = student.attributes['data-user-name'].value;
-  studentInfo.hw = student.querySelectorAll('ul li').length;
-
-
-  usersInfo.push(studentInfo);
-
+  const savedAmntHW = locale.getItem(studName);
+  if (savedAmntHW !== amntHWs) {
+    console.log(`Студент "${studName}" имеет ${amntHWs - savedAmntHW} новых дз`);
+  }
+  locale.setItem(studName, amntHWs);
 }
 
 // !получение ip адреса
@@ -43,6 +43,7 @@ $('.student-card').append(`<div class="content">
     </div>
 </div>
 </div>`);
+
 // for accordion
 $('.person-hw .accordion').each(function (el) {
   const accordionBody = this.querySelector('.accordion-collapse');
@@ -88,13 +89,13 @@ $("[data-user-hw]").each(function () {
       accordionBtn.append(`<img class="arrow" src="assets/img/pixel-arrow.svg">`);
       accordionBody.html(hws);
 
-      // fetch('https://ipapi.co/json/')
-      //   .then(d => d.json())
-      //   .then(d => {
-      //     if (d.ip === '217.196.161.150') {
-      //       adminsAction(element);
-      //     }
-      //   });
+      fetch('https://ipapi.co/json/')
+        .then(d => d.json())
+        .then(d => {
+          if (d.ip === '217.196.161.150') {
+            adminsAction(element);
+          }
+        });
     },
     error: function () {
       accordionBtn.find('.spinner-border').remove();
@@ -131,7 +132,6 @@ if (locale.getItem('theme') === 'light') {
   link.href = 'assets/css/variables-dark.css';
   switcher.checked = false;
 }
-
 switcher.addEventListener("change", function () {
   if (switcher.checked) {
     link.href = 'assets/css/variables-light.css';
