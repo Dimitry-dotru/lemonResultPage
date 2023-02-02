@@ -121,6 +121,8 @@ main .container {
 .person .person-avatar img {
     width: 130px;
     height: 130px;
+    display: flex;
+    align-items: center;
     border-radius: 100%;
     box-shadow: var(--text-shadow-light);
 }
