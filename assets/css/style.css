@@ -183,6 +183,17 @@ main .container {
     position: relative;
 }
 
+.accordion-body ul li.new::before {
+    content: 'new!';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 10px);
+    font-size: 13px;
+    font-family: var(--pixel-font);
+    transform: translate(-50%, -50%);
+    color: var(--error-color);
+}
+
 .accordion-body ul li .mark {
     position: absolute;
     right: 20px;

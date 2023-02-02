@@ -2,19 +2,24 @@ const locale = window.localStorage;
 
 function adminsAction(studentCard) {
   const student = studentCard[0];
-  
   const studName = student.querySelector('.person-name').textContent;
-  const amntHWs = student.querySelectorAll('ul li').length;
-
+  const hws = student.querySelectorAll('ul li');
+  
   const savedAmntHW = locale.getItem(studName);
-  if (savedAmntHW !== amntHWs) {
-    console.log(`Студент "${studName}" имеет ${amntHWs - savedAmntHW} новых дз`);
+
+  if (savedAmntHW !== hws.length) {
+    console.log(`Студент "${studName}" имеет ${hws.length - savedAmntHW} новых дз`);
+
+    //добавляем надпись new для домашек
+    if (hws.length - savedAmntHW > 0) {
+      const newHWAmnt = hws.length - savedAmntHW;
+      for (let i = newHWAmnt; i > 0; i--) {
+        hws[hws.length - i].classList.add('new');
+      }
+    }
   }
-  locale.setItem(studName, amntHWs);
+  locale.setItem(studName, hws.length);
 }
-
-// !получение ip адреса
-
 
 $('.student-card').wrap(`<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center mb-5"></div>`);
 $('.student-card').append(`<div class="content">
