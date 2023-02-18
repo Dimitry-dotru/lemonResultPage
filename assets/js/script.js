@@ -110,7 +110,6 @@ $("[data-user-hw]").each(function () {
   });
 });
 
-
 // scroll to top
 const scrollUpButton = document.getElementById("scroll-up-button");
 
@@ -122,7 +121,7 @@ window.onscroll = function () {
   }
 
 };
-scrollUpButton.onclick = function () {
+scrollUpButton.onclick = function () { 
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };

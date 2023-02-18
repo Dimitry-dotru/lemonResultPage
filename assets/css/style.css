@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: 'Neue Pixel Sans';
+    font-family: var(--pixel-font);
     src: url(../fonts/NeuePixelSans.woff);
     font-weight: 400;
 }
