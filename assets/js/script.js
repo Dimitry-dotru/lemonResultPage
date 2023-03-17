@@ -1,25 +1,29 @@
 const locale = window.localStorage;
 
 function adminsAction(studentCard) {
-  const student = studentCard[0];
-  const studName = student.querySelector('.person-name').textContent;
-  const hws = student.querySelectorAll('ul li');
-  
-  const savedAmntHW = locale.getItem(studName);
-
-  if (savedAmntHW !== hws.length) {
-    console.log(`Студент "${studName}" имеет ${hws.length - savedAmntHW} новых дз`);
-
-    //добавляем надпись new для домашек
-    if (hws.length - savedAmntHW > 0) {
-      const newHWAmnt = hws.length - savedAmntHW;
-      for (let i = newHWAmnt; i > 0; i--) {
-        hws[hws.length - i].classList.add('new');
+  const students = $('.student-card');
+  for (const student of students) {
+    const studName = student.querySelector('.person-name').textContent;
+    const hws = student.querySelectorAll('ul li');
+    
+    const savedAmntHW = locale.getItem(studName);
+    
+    if (savedAmntHW !== hws.length) {
+      console.log(`Студент "${studName}" имеет ${hws.length - savedAmntHW} новых дз`);
+      
+      //добавляем надпись new для домашек
+      if (hws.length - savedAmntHW > 0) {
+        const newHWAmnt = hws.length - savedAmntHW;
+        for (let i = newHWAmnt; i > 0; i--) {
+          hws[hws.length - i].classList.add('new');
+        }
       }
     }
+    locale.setItem(studName, hws.length);
   }
-  locale.setItem(studName, hws.length);
 }
+
+document.querySelector('.func').addEventListener('click', adminsAction);
 
 $('.student-card').wrap(`<div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center mb-5"></div>`);
 $('.student-card').append(`<div class="content">
@@ -93,14 +97,6 @@ $("[data-user-hw]").each(function () {
       accordionBtn.find('.spinner-border').remove();
       accordionBtn.append(`<img class="arrow" src="assets/img/pixel-arrow.svg">`);
       accordionBody.html(hws);
-
-      fetch('https://ipapi.co/json/')
-        .then(d => d.json())
-        .then(d => {
-          if (d.ip === '217.196.161.150') {
-            adminsAction(element);
-          }
-        });
     },
     error: function () {
       accordionBtn.find('.spinner-border').remove();
@@ -115,9 +111,9 @@ const scrollUpButton = document.getElementById("scroll-up-button");
 
 window.onscroll = function () {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollUpButton.style.display = "block";
+    $(scrollUpButton).fadeIn(200);
   } else {
-    scrollUpButton.style.display = "none";
+    $(scrollUpButton).fadeOut(200);
   }
 
 };

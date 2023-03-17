@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: var(--pixel-font);
+    font-family: 'Neue Pixel Sans';
     src: url(../fonts/NeuePixelSans.woff);
     font-weight: 400;
 }
@@ -21,6 +21,17 @@ header {
     background: var(--yellow-color);
 }
 
+.func {
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    outline: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 header .container {
     display: flex;
     align-items: center;
@@ -35,7 +46,13 @@ header .container .logo {
     color: var(--white-color-changible);
     user-select: none;
     text-decoration: none;
+    cursor: pointer;
     text-shadow: var(--text-shadow-light);
+}
+
+header .container .logo a {
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -185,6 +202,11 @@ main .container {
     position: relative;
 }
 
+.accordion-body ul li a {
+    display: block;
+    max-width: 180px;
+}
+
 .accordion-body ul li.new::before {
     content: 'new!';
     position: absolute;
@@ -198,7 +220,8 @@ main .container {
 
 .accordion-body ul li .mark {
     position: absolute;
-    right: 20px;
+    right: 10px;
+    top: 0;
     font-family: var(--pixel-font);
     color: var(--white-color);
     font-size: 20px;
