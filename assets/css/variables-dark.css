@@ -1,0 +1,19 @@
+:root {
+    --yellow-color: #faee0bad;
+    --blue-color: rgba(30, 165, 252, 0.25);
+    --white-color: #fff;
+    --blue-modal-window: rgba(29, 153, 233, 0.75);
+    --black-modal-fade: rgba(0, 0, 0, 0.266);
+    --white-color-changible: #404040;
+    --grey-color: #404040;
+    --grey-color-changible: #fff;
+    --error-color: #c13335;
+    --accordion-gradient-color: linear-gradient(92.54deg, #FAED0B 0%, #81E320 100%);
+    --accordion-gradient-open-color: linear-gradient(138.44deg, #FAED0B 24.24%, #81E320 77.25%);
+    --box-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    --text-shadow-light: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#scroll-up-button .pixel-arrow{
+    filter: brightness(0.25);
+}
